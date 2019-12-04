@@ -34,6 +34,7 @@ namespace ConsoleApp1
             for (int y = 1; y < 10; y++)
             {
                 Console.WriteLine(2 + "* " + y + "=" + 2 * y);
+                Console.WriteLine("test");
             }
 
 
