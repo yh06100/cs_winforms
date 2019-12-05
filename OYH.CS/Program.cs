@@ -17,7 +17,7 @@ namespace OYH.CS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new P005());
+            Application.Run(new P004());
         }
     }
 }

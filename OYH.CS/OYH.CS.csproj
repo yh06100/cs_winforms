@@ -73,6 +73,12 @@
     <Compile Include="Chapter1\P004.Designer.cs">
       <DependentUpon>P004.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chapter1\P005.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter1\P005.Designer.cs">
+      <DependentUpon>P005.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

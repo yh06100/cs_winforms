@@ -15,6 +15,9 @@ namespace OYH.CS.Chapter1
         public P005()
         {
             InitializeComponent();
+
+            Console.WriteLine("첫 번째 수를 입력하세요 : ");
+            int x = int.Parse(Console.ReadLine());
         }
     }
 }
