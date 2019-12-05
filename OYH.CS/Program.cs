@@ -1,5 +1,4 @@
-﻿
-using OYH.CS.Chapter1;
+﻿using OYH.CS.Chapter1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +17,7 @@ namespace OYH.CS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new P002());
+            Application.Run(new P005());
         }
     }
 }

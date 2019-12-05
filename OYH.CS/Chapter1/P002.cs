@@ -13,6 +13,7 @@ namespace OYH.CS.Chapter1
     public partial class P002 : Form
     {
         int x;
+        int y;
         public P002()
         {
             InitializeComponent();
@@ -30,23 +31,18 @@ namespace OYH.CS.Chapter1
 
         private void Btn_Plus_Click(object sender, EventArgs e)
         {
-            Plus();
+            int xy = Plus(textBox1.Text, textBox2.Text);
             // tb_Result.Text = ToString(x); Plus 함수에서 받아서 값만 뿌리면 될 것 같은데 어떻게 받는지 모르겠다...
 
-
-
-            int num1 = int.Parse(textBox1.Text); // 야매권
-            int num2 = int.Parse(textBox2.Text);
-            int num3 = num1 + num2;
-
-            tb_Result.Text = num3.ToString();
+            tb_Result.Text = xy.ToString();
         }
 
-        public int Plus()
+        public int Plus(string sx, string xy)
         {
-            x = int.Parse(textBox1.Text + textBox2.Text);
+            x = int.Parse(sx);
+            y = int.Parse(xy);
             label3.Text = "  +  --------------------------------";
-            return x;
+            return x+y;
         }
     }
 }
