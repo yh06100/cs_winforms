@@ -31,15 +31,33 @@ namespace OYH.CS.MybatisNET.Service
 
         public static void SelectSCORE()
         {
-            StudentVO testVo = new StudentVO();
-            IList<StudentVO> resultList = mapper.QueryForList<StudentVO>("SelectSCORE", testVo);
+            ProductVO testVo = new ProductVO();
+            IList<ProductVO> resultList = mapper.QueryForList<ProductVO>("SelectPRODUCT", testVo);
 
             for (int x = 0; x < resultList.Count; x++)
             {
-                Console.WriteLine(resultList[x].NUMBER + resultList[x].KOREAN + resultList[x].ENGLISH + resultList[x].MATH
-                    + resultList[x].SOCIAL + resultList[x].SCIENCE);
+                Console.WriteLine(resultList[x].NAME + resultList[x].COUNT + resultList[x].PRICE);
             }
         }
+
+        public static void InsertPRODUCT(ProductVO vo)
+        {
+
+            ISqlMapper mapper = EntityMapper;
+            ProductVO testVo = new ProductVO() { NAME = vo.NAME, COUNT = vo.COUNT, PRICE = vo.PRICE };
+            mapper.Insert("InsertPRODUCT", testVo);
+        }
+        public static void SelectPRODUCT()
+        {
+            ProductVO testVo = new ProductVO();
+            IList<ProductVO> resultList = mapper.QueryForList<ProductVO>("SelectPRODUCT", testVo);
+
+            for (int x = 0; x < resultList.Count; x++)
+            {
+                Console.WriteLine(resultList[x].NAME + resultList[x].COUNT + resultList[x].PRICE);
+            }
+        }
+
         public static void InsertSCORE(StudentVO vo)
         {
             StudentVO testVo = new StudentVO()

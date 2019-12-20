@@ -61,5 +61,27 @@
       , SCIENCE
       FROM SCORE;
     </statement>
+    
+    <statement id="InsertPRODUCT" parameterClass="OYH.CS.MybatisNET.VO.ProductVO"  >
+      INSERT INTO PRODUCT
+      (
+      NAME
+      , COUNT
+      , PRICE
+      )
+      VALUES
+      (
+      #NAME#
+      , #COUNT#
+      , #PRICE#
+      );
+    </statement>
+    <statement id="SelectPRODUCT" parameterClass="OYH.CS.MybatisNET.VO.ProductVO" resultClass="OYH.CS.MybatisNET.VO.ProductVO" >
+      SELECT
+      NAME
+      , COUNT
+      , PRICE
+      FROM PRODUCT;
+    </statement>
   </statements>
 </sqlMap>

@@ -119,6 +119,12 @@
     <Compile Include="Chapter1\P007.Designer.cs">
       <DependentUpon>P007.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chapter1\P008.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter1\P008.Designer.cs">
+      <DependentUpon>P008.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,7 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="MybatisNET\Service\MyService.cs" />
+    <Compile Include="MybatisNET\VO\ProductVO.cs" />
     <Compile Include="MybatisNET\VO\StudentVO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chapter1\P007.resx">
       <DependentUpon>P007.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter1\P008.resx">
+      <DependentUpon>P008.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
