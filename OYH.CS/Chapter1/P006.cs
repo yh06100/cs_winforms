@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OYH.CS.MybatisNET;
 using OYH.CS.MybatisNET.VO;
+using OYH.CS.MybatisNET.Service;
 
 namespace OYH.CS.Chapter1
 {
@@ -33,8 +34,8 @@ namespace OYH.CS.Chapter1
                 vo.SEX = tb_SEX.Text;
                 //MessageBox.Show(tb_NUMBER.Text);
 
-                InsertSTUDENT(vo);
-                SelectSTUDENT();
+                MyService.InsertSTUDENT(vo);
+                MyService.SelectSTUDENT();
             }
             catch (Exception ex)
             {
@@ -42,51 +43,7 @@ namespace OYH.CS.Chapter1
             }
         }
 
-        public static void SelectSTUDENT()
-        {
-            ISqlMapper mapper = EntityMapper;
-            StudentVO testVo = new StudentVO();
-            IList<StudentVO> resultList = mapper.QueryForList<StudentVO>("SelectSTUDENT", testVo);
 
-            for (int x = 0; x < resultList.Count; x++)
-            {
-                Console.WriteLine(resultList[x].NUMBER + resultList[x].NAME + resultList[x].AGE + resultList[x].SEX);
-            }
-        }
-        public static void InsertSTUDENT(StudentVO vo)
-        {
-            
-            ISqlMapper mapper = EntityMapper;
-            StudentVO testVo = new StudentVO() { NUMBER = vo.NUMBER, NAME = vo.NAME, AGE = vo.AGE, SEX = vo.SEX };
-            mapper.Insert("InsertSTUDENT", testVo);
-        }
-
-
-
-        // 
-        public static ISqlMapper EntityMapper
-        {
-            get
-            {
-                try
-                {
-                    ISqlMapper mapper = Mapper.Instance();
-                    //mapper.DataSource.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-                    return mapper;
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-            }
-        }
-        public static string executeFunction()
-        {
-
-            ISqlMapper mapper = EntityMapper;
-            string str = mapper.QueryForObject<string>("FindPageId", "Footer");
-            return str;
-        }
 
     }
 }
