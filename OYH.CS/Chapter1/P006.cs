@@ -21,7 +21,15 @@ namespace OYH.CS.Chapter1
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("윤호짱");
+            try
+            {
+                MessageBox.Show(tb_NUMBER.Text);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
