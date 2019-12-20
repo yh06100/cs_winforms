@@ -79,6 +79,12 @@
     <Compile Include="Chapter1\P005.Designer.cs">
       <DependentUpon>P005.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chapter1\P006.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chapter1\P006.Designer.cs">
+      <DependentUpon>P006.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chapter1\P004.resx">
       <DependentUpon>P004.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chapter1\P006.resx">
+      <DependentUpon>P006.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
