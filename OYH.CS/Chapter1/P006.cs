@@ -26,7 +26,14 @@ namespace OYH.CS.Chapter1
         {
             try
             {
+                StudentVO vo = new StudentVO();
+                vo.NUMBER = tb_NUMBER.Text;
+                vo.NAME = tb_NAME.Text;
+                vo.AGE = tb_AGE.Text;
+                vo.SEX = tb_SEX.Text;
                 //MessageBox.Show(tb_NUMBER.Text);
+
+                InsertSTUDENT(vo);
                 SelectSTUDENT();
             }
             catch (Exception ex)
@@ -46,40 +53,14 @@ namespace OYH.CS.Chapter1
                 Console.WriteLine(resultList[x].NUMBER + resultList[x].NAME + resultList[x].AGE + resultList[x].SEX);
             }
         }
-        public static void InsertSTUDENT()
+        public static void InsertSTUDENT(StudentVO vo)
         {
             
             ISqlMapper mapper = EntityMapper;
-            StudentVO testVo = new StudentVO() { NUMBER = "13-71019424", NAME = "OHYUNHO", AGE = "27", SEX = "MAN" };
+            StudentVO testVo = new StudentVO() { NUMBER = vo.NUMBER, NAME = vo.NAME, AGE = vo.AGE, SEX = vo.SEX };
             mapper.Insert("InsertSTUDENT", testVo);
         }
-        public static void SelectSCORE()
-        {
-            ISqlMapper mapper = EntityMapper;
-            StudentVO testVo = new StudentVO();
-            IList<StudentVO> resultList = mapper.QueryForList<StudentVO>("SelectSCORE", testVo);
 
-            for (int x = 0; x < resultList.Count; x++)
-            {
-                Console.WriteLine(resultList[x].NUMBER + resultList[x].KOREAN + resultList[x].ENGLISH + resultList[x].MATH
-                    + resultList[x].SOCIAL + resultList[x].SCIENCE);
-            }
-        }
-        public static void InsertSCORE()
-        {
-            ISqlMapper mapper = EntityMapper;
-            StudentVO testVo = new StudentVO()
-            {
-                NUMBER = "13-71019424",
-                KOREAN = "10",
-                ENGLISH = "20",
-                MATH = "30"
-            ,
-                SOCIAL = "40",
-                SCIENCE = "50"
-            };
-            mapper.Insert("InsertSCORE", testVo);
-        }
 
 
         // 
